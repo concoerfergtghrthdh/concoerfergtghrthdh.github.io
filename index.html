@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gagan - Professional Tech & Gaming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0D1117; /* GitHub dark mode bg */
+            color: #C9D1D9; /* Lighter text for readability */
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1f2937, #0D1117);
+        }
+        .header-bg {
+            background-color: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card {
+            background-color: #161B22; /* Slightly lighter card bg */
+            border: 1px solid #30363D;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            border-color: #58A6FF; /* Accent color on hover */
+        }
+        .btn-gradient {
+            background-image: linear-gradient(to right, #58A6FF, #3B82F6);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px 0 rgba(59, 130, 246, 0.3);
+        }
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px 0 rgba(59, 130, 246, 0.5);
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #58A6FF, #3B82F6);
+            border-radius: 2px;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border: 1px solid #30363D;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .stat-card {
+            background-color: #161B22;
+            border: 1px solid #30363D;
+        }
+        /* Reveal on scroll animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="header-bg fixed w-full z-50 top-0 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold text-white tracking-wider">GAGAN</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">About</a>
+                    <a href="#latest-video" class="text-gray-400 hover:text-white transition-colors duration-300">Latest</a>
+                    <a href="#videos" class="text-gray-400 hover:text-white transition-colors duration-300">Portfolio</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                 <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">About</a>
+                 <a href="#latest-video" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Latest</a>
+                 <a href="#videos" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Portfolio</a>
+                 <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-40 pb-24 text-white text-center">
+        <div class="container mx-auto px-6">
+            <img src="https://yt3.googleusercontent.com/ytc/AIdro_k6y4zV-2yYn14aQyHe9o3E8I1K-G0A-t_wJ-E1qWwJtA=s176-c-k-c0x00ffffff-no-rj" alt="Gagan Channel Logo" class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full border-4 border-gray-700 shadow-2xl mb-6" onerror="this.onerror=null;this.src='https://placehold.co/160x160/0D1117/C9D1D9?text=G';">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">Innovate. Create. Inspire.</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10 text-gray-400 font-light">
+                Your premier source for high-quality tech insights, in-depth game analysis, and creative content.
+            </p>
+            <a href="https://www.youtube.com/channel/UCRqhPGM1pkddOCbCbCemTPw?sub_confirmation=1" target="_blank" class="btn-gradient font-semibold py-3 px-10 rounded-full text-lg inline-flex items-center">
+                <i class="fab fa-youtube mr-3"></i> Join the Community
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-12 bg-black bg-opacity-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="stat-card p-4 rounded-lg reveal">
+                    <h3 class="text-3xl font-bold text-white">100K+</h3>
+                    <p class="text-gray-400">Subscribers</p>
+                </div>
+                <div class="stat-card p-4 rounded-lg reveal" style="transition-delay: 100ms;">
+                    <h3 class="text-3xl font-bold text-white">500+</h3>
+                    <p class="text-gray-400">Videos</p>
+                </div>
+                <div class="stat-card p-4 rounded-lg reveal" style="transition-delay: 200ms;">
+                    <h3 class="text-3xl font-bold text-white">10M+</h3>
+                    <p class="text-gray-400">Total Views</p>
+                </div>
+                <div class="stat-card p-4 rounded-lg reveal" style="transition-delay: 300ms;">
+                    <h3 class="text-3xl font-bold text-white">2020</h3>
+                    <p class="text-gray-400">Since</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-[#161B22]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 reveal">
+                     <h2 class="section-title text-3xl font-bold text-center mb-12 text-white">About The Channel</h2>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">Driven by a Passion for Technology.</h3>
+                    <p class="text-gray-400 mb-4">
+                        What began as a simple hobby has evolved into a dedicated platform for exploring the vast world of technology and gaming. Gagan's channel is built on a foundation of genuine curiosity and a desire to share knowledge. We're not just reviewing products; we're exploring the future.
+                    </p>
+                    <p class="text-gray-400">
+                        Our content ranges from deep-dive hardware analyses and software tutorials to engaging gameplay streams and discussions on industry trends. We believe in creating content that is not only informative but also inspiring, helping our viewers to make informed decisions and ignite their own passion for tech.
+                    </p>
+                </div>
+                <div class="lg:w-1/2 reveal" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/600x450/0D1117/3B82F6?text=Studio+Setup" alt="About Gagan" class="rounded-lg shadow-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x450/0D1117/C9D1D9?text=Image';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Video Section -->
+    <section id="latest-video" class="py-24">
+        <div class="container mx-auto px-6 reveal">
+            <h2 class="section-title text-3xl font-bold text-center mb-12 text-white">Featured Video</h2>
+            <div class="video-container rounded-lg shadow-2xl max-w-4xl mx-auto">
+                <iframe src="https://www.youtube.com/embed/50-gAl5WomA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Portfolio Section -->
+    <section id="videos" class="py-24 bg-[#161B22]">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-3xl font-bold text-center mb-12 text-white">Content Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Replace with your video details -->
+                <div class="card rounded-lg overflow-hidden reveal">
+                    <a href="https://www.youtube.com/watch?v=sBws0J-F7kI" target="_blank" class="block group">
+                       <div class="overflow-hidden"><img src="https://img.youtube.com/vi/sBws0J-F7kI/maxresdefault.jpg" alt="Video Thumbnail" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/400x225/161B22/C9D1D9?text=Video';"></div>
+                       <div class="p-6">
+                           <p class="text-blue-400 text-sm mb-1">Development</p>
+                           <h3 class="font-semibold text-xl mb-2 text-white">Top 5 VSCode Extensions</h3>
+                           <p class="text-gray-400 text-base font-light">Boost your productivity with these essential VSCode extensions for modern developers.</p>
+                       </div>
+                    </a>
+                </div>
+                <div class="card rounded-lg overflow-hidden reveal" style="transition-delay: 100ms;">
+                     <a href="https://www.youtube.com/watch?v=eB94w_V2h-8" target="_blank" class="block group">
+                        <div class="overflow-hidden"><img src="https://img.youtube.com/vi/eB94w_V2h-8/maxresdefault.jpg" alt="Video Thumbnail" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/400x225/161B22/C9D1D9?text=Video';"></div>
+                        <div class="p-6">
+                           <p class="text-blue-400 text-sm mb-1">Tutorial</p>
+                           <h3 class="font-semibold text-xl mb-2 text-white">Create a Discord Bot</h3>
+                           <p class="text-gray-400 text-base font-light">A complete beginner's guide to building and deploying your first Discord bot with Node.js.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card rounded-lg overflow-hidden reveal" style="transition-delay: 200ms;">
+                    <a href="https://www.youtube.com/watch?v=kflpcR_2u4s" target="_blank" class="block group">
+                        <div class="overflow-hidden"><img src="https://img.youtube.com/vi/kflpcR_2u4s/maxresdefault.jpg" alt="Video Thumbnail" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/400x225/161B22/C9D1D9?text=Video';"></div>
+                        <div class="p-6">
+                           <p class="text-blue-400 text-sm mb-1">Hardware</p>
+                           <h3 class="font-semibold text-xl mb-2 text-white">Gaming PC Build 2024</h3>
+                           <p class="text-gray-400 text-base font-light">Assembling the ultimate price-to-performance gaming PC. A detailed walkthrough.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 text-center">
+        <div class="container mx-auto px-6 reveal">
+            <h2 class="section-title text-3xl font-bold mb-6 text-white">Let's Collaborate</h2>
+            <p class="max-w-2xl mx-auto text-gray-400 mb-10 font-light">
+                For business inquiries, collaborations, or sponsorships, please get in touch. Let's create something amazing together.
+            </p>
+            <a href="mailto:contact@yourdomain.com" class="btn-gradient font-semibold py-3 px-10 rounded-full text-lg inline-flex items-center">
+                <i class="fas fa-envelope mr-3"></i> Email for Inquiries
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#161B22] border-t border-gray-800">
+        <div class="container mx-auto py-8 px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-lg font-bold text-white">Gagan</p>
+                    <p class="text-gray-500">Tech & Gaming Content Creator</p>
+                </div>
+                <div class="flex justify-center space-x-6 mb-4 md:mb-0">
+                    <!-- Replace '#' with your actual social media links -->
+                    <a href="#" class="text-gray-500 hover:text-blue-400 transition-colors duration-300 text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-blue-400 transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-blue-400 transition-colors duration-300 text-2xl"><i class="fab fa-discord"></i></a>
+                    <a href="https://www.youtube.com/channel/UCRqhPGM1pkddOCbCbCemTPw" target="_blank" class="text-gray-500 hover:text-red-500 transition-colors duration-300 text-2xl"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-600 text-sm">
+                <p>&copy; 2024 Gagan. All Rights Reserved. Designed with a professional touch.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Header Style on Scroll ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        // --- Reveal on Scroll Animation ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // --- Smooth scrolling for all anchor links ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu on link click
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
